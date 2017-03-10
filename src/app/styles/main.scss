@@ -1,0 +1,42 @@
+@import "_custom-bootstrap";
+
+@import "_variables";
+@import "_search";
+@import "_breadcrumbs";
+@import "../list/styles/_list";
+@import "../details/styles/_details";
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $ml-darker-grey;
+    font-size: 13px;
+}
+
+.sprite {
+    background-image: url("/public/media/spritesheet.png");
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-ic_Search {
+    width: 18px;
+    height: 18px;
+    background-position: 4px 4px;
+}
+
+.sprite-ic_Search_2x-png {
+    width: 36px;
+    height: 36px;
+    background-position: -33px -5px;
+}
+
+.sprite-ic_shipping {
+    width: 18px;
+    height: 18px;
+    background-position: -79px -5px;
+}
+
+.sprite-ic_shipping_2x-png {
+    width: 36px;
+    height: 36px;
+    background-position: -107px -5px;
+}

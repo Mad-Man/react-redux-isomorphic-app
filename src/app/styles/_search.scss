@@ -1,0 +1,14 @@
+.search-container {
+    background-color: $ml-yellow;
+    .search {
+        margin: 15px 0 15px 0;
+        .search-box {
+            height: 37px;
+            border: 0;
+            .search-button {
+                height: 37px;
+                border: 0;
+            }
+        }
+    }
+}

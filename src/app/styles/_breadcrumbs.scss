@@ -1,0 +1,14 @@
+.breadcrumbs {
+    background: $ml-light-grey;
+    div {
+        margin: $ml-margin 0;
+        font-size: 14px;
+        font-weight: bold;
+        span {
+            color: $ml-dark-grey;
+            &.category-item {
+                color: $ml-grey;
+            }
+        }
+    }
+}

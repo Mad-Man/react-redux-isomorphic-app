@@ -1,0 +1,6 @@
+.babelrc
+.vscode/
+.dist/public/js/bundle.js
+.dist/public/js/*
+.dist/public/styles/*
+node_modules

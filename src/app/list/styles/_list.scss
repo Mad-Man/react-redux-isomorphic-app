@@ -1,0 +1,14 @@
+@import "_list-variables";
+.item-card {
+    background: $item-card-background;
+    img {
+        width: $image-width;
+        border-radius: $image-border-radius;
+    }
+    p {
+        margin: 0
+    }
+    hr {
+        margin: $card-margin 0;
+    }
+}

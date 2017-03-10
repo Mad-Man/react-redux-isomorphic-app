@@ -1,0 +1,21 @@
+.buy-now {
+    padding: $ml-padding $ml-padding 0 0;
+    .price-container {
+        padding: $ml-padding 0;
+        .price-amount {
+            font-size: 46px;
+        }
+    }
+    .item-condition {
+        font-size: 14px;
+    }
+    .item-title {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .buy-now-btn {
+        background-color: $ml-blue;
+        color: $white;
+        width: 100%;
+    }
+}
