@@ -1,4 +1,4 @@
-# ${1:Project Name}
+# react-redux-isomorphic-app
 TODO: Write a project description
 ## Installation
 1. npm install
