@@ -7,7 +7,8 @@
     "start": "cross-env NODE_ENV=production node_modules/.bin/babel-node src/app/server.js",
     "dev": "webpack-dev-server --content-base dist",
     "server": "node_modules/.bin/http-server dist",
-    "build": "webpack -p"
+    "build-prod": "webpack -p",
+    "build-dev": "webpack"
   },
   "author": "",
   "license": "ISC",
