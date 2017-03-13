@@ -1,5 +1,5 @@
 # react-redux-isomorphic-app
-TODO: Write a project description
+nombre: Aldama Juan Ignacio
 ## Installation
 1. Instal node(6.10)
 2. npm install
