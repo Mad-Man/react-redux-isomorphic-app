@@ -11,7 +11,7 @@ or
 1. npm serve-dev
 
 #Prod
-1. npm run build-pro 
+1. npm run build-prod 
 
 ##Tests
 1. npm test
