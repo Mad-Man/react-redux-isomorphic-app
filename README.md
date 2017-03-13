@@ -55,6 +55,8 @@ or
 ```
 #comments
 - las imagenes del listado son de una resolucion mas baja (80 x 80) que el 180 x 180 de los redlines.
+- item description (https://api.mercadolibre.com/items/:id/description) es un html entero que
+  no tiene relacion con los comps
 - hay algunos tests de los modulos principales no de todos, se corren con npm test
 - npm build-prod compila los bundles los minifica los zipea (99k y 7k  js y css respectivamente) y corre el server
 - la app corre en http://localhost:1616
