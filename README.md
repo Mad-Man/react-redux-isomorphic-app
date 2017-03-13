@@ -21,25 +21,28 @@ npm run build-webpack-prod > runs minified version of the bundles
 npm run watch-sass > runs a watch task over scss files 
 
 #Project structure
-����app
-    ����components
-    ����details
-    �   ����actions
-    �   ����buy-now-box
-    �   �   ����components
-    �   �   ����styles
-    �   ����components
-    �   ����reducers
-    �   ����styles
-    ����list
-    �   ����actions
-    �   ����components
-    �   ����reducers
-    �   ����styles
-    ����routes
-    ����server
-    �   ����handlers
-    �   ����models
-    �   ����views
-    ����store
-    ����styles
+src
+    `-- app
+        |-- components
+        |-- details
+        |   |-- actions
+        |   |-- buy-now
+        |   |   |-- components
+        |   |   `-- styles
+        |   |-- components
+        |   |-- reducers
+        |   `-- styles
+        |-- list
+        |   |-- actions
+        |   |-- components
+        |   |-- reducers
+        |   `-- styles
+        |-- routes
+        |-- server
+        |   |-- handlers
+        |   |-- models
+        |   `-- views
+        |-- store
+        |-- styles
+        |-- client.js
+        `-- server.js
