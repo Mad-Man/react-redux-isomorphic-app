@@ -1,1 +1,44 @@
-@import '../buy-now-box/styles/_buy-now'
+@import '../buy-now-box/styles/_buy-now';
+.details-container {
+    div:first-of-type {
+        //small devices
+        @media (max-width: 800px) {
+            figure {
+                padding: $ml-padding 10px 0 10px;
+                img.item-detail-picture {
+                    width: 100%;
+                }
+            }
+            .description-container {
+                display: none;
+            }
+        }
+        //large devices
+        @media (min-width: 900px) {
+            figure {
+                padding: $ml-padding 0 0 0;
+                img.item-detail-picture {
+                    width: 680px;
+                }
+            }
+        }
+        figure {
+            &.loading {
+                text-align: center;
+            }
+        }
+        &.col-10 {
+            background: $ml-white;
+        }
+        .description-container {
+            padding: 0 0 0 $ml-padding;
+            h1 {
+                font-size: $ml-font-size-md;
+            }
+        }
+        .description-section {
+            font-size: $ml-font-size-s;
+            padding: $ml-padding 0;
+        }
+    }
+}

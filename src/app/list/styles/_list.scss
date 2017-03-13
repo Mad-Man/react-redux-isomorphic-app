@@ -1,14 +1,55 @@
 @import "_list-variables";
-.item-card {
-    background: $item-card-background;
-    img {
-        width: $image-width;
-        border-radius: $image-border-radius;
+.list-container {
+    background: $ml-white;
+    article {
+        margin: $ml-margin 0 0 0;
     }
-    p {
-        margin: 0
-    }
-    hr {
-        margin: $card-margin 0;
+    .item-card {
+        background: $item-card-background;
+        margin-bottom: $ml-margin;
+        a {
+            &:link,
+            &:visited,
+            &:active,
+            &:hover {
+                color: $ml-dark-grey;
+                text-decoration: none;
+            }
+        }
+        figure {
+            padding: 0;
+            margin: 0 16px 0 16px;
+            img {
+                width: $image-width;
+                border-radius: $image-border-radius;
+            }
+        }
+        .item-info {
+            padding: 16px 0 0 0;
+            .price-info {
+                display: inline-block;
+                line-height: 10px;
+                vertical-align: bottom;
+                i {
+                    margin: 0 0 0 10px;
+                }
+                sup {
+                    vertical-align: super;
+                }
+            }
+            .item-title {
+                font-size: 18px;
+                line-height: 18px;
+                padding: $ml-padding 0 0 0;
+            }
+            .item-address {
+                font-size: 12px;
+            }
+        }
+        hr {
+            margin: $card-margin 0 0 10px;
+            border: none;
+            border-bottom: 1px solid $ml-light-grey;
+        }
     }
 }

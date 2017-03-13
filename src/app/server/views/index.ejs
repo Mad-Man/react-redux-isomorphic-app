@@ -4,14 +4,15 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Mercado libre - Test practico - Aldama Juan Ignacio</title>
-        <link rel="stylesheet" href="/public/styles/main.css"/>
+        <link rel="shortcut icon" href="/dist/media/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="/dist/main.css"/>
     </head>
     <body>
-        <div id="app"><%- html %></div>
+        <div id="app"><div><%- html %></div></div>
         <% if (state) { %>
             <!--set global variable with the server initial state-->
             <script>window.__REDUX_STORE = JSON.parse(JSON.stringify(<%- state %>))</script>
         <% } %>
-        <script src="/public/js/bundle.js"></script>
+        <script src="/dist/bundle.js"></script>
     </body>
 </html>

@@ -23,7 +23,7 @@ export function fetchDetails(id) {
                 console.log(err)
                 dispatch({
                     type: "REQUEST_DETAILS_FAILED",
-                    payload: err
+                    error: err
                 })
             })
     }
@@ -36,6 +36,5 @@ export function fetchDetailsFromServer(id) {
             payload: null
         });
         return axios.get(`http://localhost:1616/api/items/${id}`)
-
     }
 }

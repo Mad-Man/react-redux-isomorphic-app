@@ -15,7 +15,7 @@
     REQ_LIST_ACTION_TYPE: 'REQUEST_LIST_SUCCESS',
     FATAL_ERROR_MESSAGE: "Fatal error!",
     API_CONNECTION_MESSAGE: '[%s] - %s - list items response: %s',
-    API_DETAILS_CONNECTION_MESSAGE: '[%s] - %s - item deteail response: %s',
+    API_DETAILS_CONNECTION_MESSAGE: '[%s] - %s - item details response: %s',
     DEATAILS_API_URI: (id) => {
       return `https://api.mercadolibre.com/items/${id}`
     },

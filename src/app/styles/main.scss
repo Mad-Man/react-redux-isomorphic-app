@@ -1,20 +1,53 @@
 @import "_custom-bootstrap";
-
 @import "_variables";
+@import "_custom-resets";
 @import "_search";
 @import "_breadcrumbs";
 @import "../list/styles/_list";
 @import "../details/styles/_details";
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: $ml-darker-grey;
-    font-size: 13px;
+#app {
+    background: #EEE;
+    height: 100vh;
+}
+
+// Classes
+.pull-left {
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center!important;
+    -webkit-justify-content: center!important;
+    -ms-flex-pack: center!important;
+    justify-content: center!important;
+}
+
+.loader-enter {
+    opacity: 0.01;
+}
+
+.loader-enter.loader-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.loader-leave {
+    opacity: 1;
+}
+
+.loader-leave.loader-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
 }
 
 .sprite {
-    background-image: url("/public/media/spritesheet.png");
+    background-image: url("/dist/media/spritesheet.png");
     background-repeat: no-repeat;
-    display: block;
+    display: inline-block;
 }
 
 .sprite-ic_Search {
@@ -39,4 +72,21 @@ body {
     width: 36px;
     height: 36px;
     background-position: -107px -5px;
+}
+
+#app {
+    section:first-of-type {
+        margin-bottom: 52px;
+    }
+}
+
+.loader-container {
+    figure {
+        padding: 40px;
+        margin-top: 52px;
+        text-align: center;
+        img {
+            width: 80px;
+        }
+    }
 }

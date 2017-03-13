@@ -24,7 +24,7 @@
      _getCategories() {
          var resultCategories = [];
          let filters = _.get(this, '_originalList.filters');
-         if (filter) {
+         if (filters) {
              filters.forEach((categories) => {
                  if (categories.values) {
                      categories.values.forEach((category) => {

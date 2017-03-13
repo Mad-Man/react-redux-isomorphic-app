@@ -11,17 +11,23 @@ export class Breadcrumbs extends React.Component {
     render() {
         const {categories, search} = this.props;
         const breadcrumbs = categories ?
-            categories.map((category) => { return <span className="category-item" key={category}>{category} <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </span> }) :
+            categories.map((category, index, catergories) => {
+                let lastItem = index === categories.length - 1;
+                return (
+                    <span className="category-item" style={{ color: lastItem ? '#666' : '#999' }} key={category}>
+                        {category} {!lastItem && <span className="chevron-arrow">></span>}
+                    </span>
+                )
+            }) :
             null;
-
         return (
-            <div className="row justify-content-center breadcrumbs">
-                {categories &&
-                    <div className="col-md-10">
-                        {breadcrumbs} {breadcrumbs && <span>{search}</span>}
+            <nav className="container">
+                <div className="row justify-content-center breadcrumbs">
+                    <div className="col-10">
+                        {categories && <span> {breadcrumbs}</span>}
                     </div>
-                }
-            </div>
+                </div>
+            </nav>
         );
     }
 }

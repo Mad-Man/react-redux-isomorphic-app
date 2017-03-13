@@ -1,41 +1,47 @@
- class ListItem {
-     constructor(item) {
-         this._responseItem = item;
+import _ from 'lodash'
 
-         this.id = String;
-         this.title = String;
-         this.price = {
-             currency: String,
-             amount: Number,
-             decimals: Number
-         };
-         this.picture = String;
-         this.condition = String;
-         this.free_shipping = Boolean;
-         this._createListItem();
-     }
+class ListItem {
+    constructor(item) {
+        this._responseItem = item;
 
-     _createListItem() {
-         this.id = this._responseItem.id;
-         this.title = this._responseItem.title;
-         this.price.currency = this._responseItem.currency_id;
-         this.price.amount = this._responseItem.price;
-         this.price.decimals = 0;
-         this.picture = this._responseItem.thumbnail;
-         this.condition = this._responseItem.condition;
-         this.free_shipping = this._responseItem.shipping.free_shipping;
-     }
+        this.id = String;
+        this.title = String;
+        this.price = {
+            currency: String,
+            amount: Number,
+            decimals: Number
+        };
+        this.picture = String;
+        this.condition = String;
+        this.free_shipping = Boolean;
+        this.address = Boolean;
+        this._createListItem();
+    }
 
-     getListItem() {
-         return {
-             id: this.id,
-             title: this.title,
-             price: this.price,
-             picture: this.picture,
-             condition: this.condition,
-             free_shipping: this.free_shipping
-         }
-     }
+    _createListItem() {
+        let price = _.get(this, '_responseItem.price');
+        this.id = _.get(this, '_responseItem.id');
+        this.title = _.get(this, '_responseItem.title');
+        this.price.currency = _.get(this, '_responseItem.currency_id');
+        this.price.amount = parseInt(price.toString());
+        this.price.decimals = (price % 1).toFixed(2) * 100;
+        this.picture = _.get(this, '_responseItem.thumbnail');
+        this.condition = _.get(this, '_responseItem.condition');
+        this.free_shipping = _.get(this, '_responseItem.shipping.free_shipping');
+        this.address = _.get(this, '_responseItem.address');
+    }
 
- }
- module.exports = ListItem;
+    getListItem() {
+        return {
+            id: this.id,
+            title: this.title,
+            price: this.price,
+            picture: this.picture,
+            condition: this.condition,
+            free_shipping: this.free_shipping,
+            address: this.address
+        }
+    }
+
+}
+module.exports = ListItem;

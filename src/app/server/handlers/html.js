@@ -5,7 +5,7 @@ import React from 'react';
 import { RouterContext } from 'react-router'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
-import { NotFound } from '../../components/not-found'
+import _ from 'lodash'
 import Constants from '../server-constants'
 
 module.exports = (req, res) => {
@@ -23,14 +23,20 @@ module.exports = (req, res) => {
             if (redirectLocation) {
                 return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
             }
-
-            if (componentsPromises && typeof componentsPromises === Constants.OBJECT_TYPE) {
+            if (!_.isEmpty(componentsPromises) && typeof componentsPromises === Constants.OBJECT_TYPE) {
                 Promise.all(componentsPromises)
                     .then((responses) => {
                         responses.forEach((response) => {
-                            renderHtml(response, res, newStore, renderProps);
+                            updateState(newStore, response, req);
+                            renderHtml(res, newStore, renderProps);
                         })
                     })
+                    .catch((err) => {
+                        updateState(newStore, err, req);
+                        renderHtml(res, newStore, renderProps);
+                    })
+            } else {
+                renderHtml(res, newStore, renderProps);
             }
         });
 }
@@ -39,21 +45,29 @@ module.exports = (req, res) => {
  * Creates html to add into the template and passes the store state to the client app 
  * Denpending on the type of req notify redux that req state
  */
-function renderHtml(response, res, newStore, renderProps) {
-    let type = response.data && response.data.items ?
-        Constants.REQ_LIST_ACTION_TYPE :
-        Constants.REQ_DETAIL_ACTION_TYPE
-    newStore.dispatch({
-        type: type,
-        payload: response.data
-    })
+function renderHtml(res, newStore, renderProps) {
     let markup;
     if (renderProps) {
         markup = renderToString(<Provider store={newStore}><RouterContext { ...renderProps} /></Provider>);
-
-    } else {
-        markup = renderToString(< NotFound />);
-        res.status(404);
     }
     return res.render(Constants.INDEX_FILE, { html: markup, state: JSON.stringify(newStore.getState()) });
+}
+
+const updateState = (store, response, origianlRequest) => {
+    if (response.status === 200) {
+        let type = response.data && response.data.items ?
+            Constants.REQ_LIST_ACTION_TYPE :
+            Constants.REQ_DETAIL_ACTION_TYPE
+        store.dispatch({
+            type: type,
+            payload: response.data
+        });
+    } else {
+        let type = _.isEmpty(origianlRequest.query) ? 'REQUEST_DETAILS_FAILED' : 'REQUEST_LIST_FAILED';
+        store.dispatch({
+            type: type,
+            error: 'Response Error'
+        });
+
+    }
 }

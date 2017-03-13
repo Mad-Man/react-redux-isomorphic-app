@@ -30,8 +30,8 @@
          this.item.id = _.get(this, '_originalItem.id');
          this.item.title = _.get(this, '_originalItem.title');
          this.item.price.currency = _.get(this, '_originalItem.currency_id');
-         this.item.price.amount = _.get(this, '_originalItem.price');
-         this.item.price.decimals = 0;
+         this.item.price.amount = parseInt(_.get(this, '_originalItem.price').toString());
+         this.item.price.decimals = (_.get(this, '_originalItem.price') % 1).toFixed(2) * 100;
          this.item.picture = _.get(this, '_originalItem.pictures[0].url');
          this.item.condition = _.get(this, '_originalItem.condition');
          this.item.sold_quantity = _.get(this, '_originalItem.sold_quantity');

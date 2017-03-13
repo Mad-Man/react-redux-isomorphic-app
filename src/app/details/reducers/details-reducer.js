@@ -1,4 +1,4 @@
-export const detailsReducer = (state = { details: {} }, action) => {
+export const detailsReducer = (state = { details: {}, loading: true, error: null }, action) => {
     switch (action.type) {
         case ('REQUEST_DETAILS_START'): {
             return { ...state, loading: true, details: {} }
@@ -9,7 +9,7 @@ export const detailsReducer = (state = { details: {} }, action) => {
             break;
         }
         case ('REQUEST_DETAILS_FAILED'): {
-            return { ...state, loading: false }
+            return { ...state, loading: false, details: {}, error: action.error }
             break;
         }
         case ('REQUEST_DETAILS_SUCCESS'): {

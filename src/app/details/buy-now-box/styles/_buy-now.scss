@@ -1,21 +1,36 @@
 .buy-now {
-    padding: $ml-padding $ml-padding 0 0;
+    @media (max-width: 800px) {
+        padding: $ml-padding 10px 10px 10px;
+        .price-container {
+            .price-amount {
+                font-size: $ml-font-size-xl;
+            }
+        }
+    }
+    @media (min-width: 900px) {
+        padding: $ml-padding $ml-padding 0 0;
+        .price-amount {
+            font-size: $ml-font-size-xl;
+        }
+    }
     .price-container {
         padding: $ml-padding 0;
-        .price-amount {
-            font-size: 46px;
+        sup {
+            font-size: 20px;
+            vertical-align: super;
         }
     }
     .item-condition {
-        font-size: 14px;
+        font-size: $ml-font-size-xs;
+        margin: 0 0 $ml-margin-md 0
     }
     .item-title {
-        font-size: 24px;
+        font-size: $ml-font-size-l;
         font-weight: bold;
     }
     .buy-now-btn {
         background-color: $ml-blue;
-        color: $white;
+        color: $ml-white;
         width: 100%;
     }
 }

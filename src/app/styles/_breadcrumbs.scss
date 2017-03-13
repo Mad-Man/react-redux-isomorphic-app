@@ -1,12 +1,17 @@
 .breadcrumbs {
     background: $ml-light-grey;
-    div {
+    div:first-of-type {
         margin: $ml-margin 0;
+        padding: 0;
         font-size: 14px;
         font-weight: bold;
         span {
             color: $ml-dark-grey;
             &.category-item {
+                .chevron-arrow{
+                    padding: 0 10px;
+                    color: $ml-grey;
+                }
                 color: $ml-grey;
             }
         }
