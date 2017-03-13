@@ -9,11 +9,14 @@ TODO: Write a project description
 2. npm start
 or
 1. npm serve-dev
+
 #Prod
 1. npm run build-pro 
-#Tests
+
+##Tests
 1. npm test
-#Additional tasks
+
+###Additional tasks
 npm run clean > will clean bundled files from dist folder
 npm run gzip-js > zips the bundle.js file from dist to pre-zip the content
 npm run gzip-css > zips the main.css file from dist to pre-zip the content
