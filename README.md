@@ -25,29 +25,31 @@ or
 
 #Project structure
 ```
-src
-    `-- app
-        |-- components
-        |-- details
-        |   |-- actions
-        |   |-- buy-now
-        |   |   |-- components
-        |   |   `-- styles
-        |   |-- components
-        |   |-- reducers
-        |   `-- styles
-        |-- list
-        |   |-- actions
-        |   |-- components
-        |   |-- reducers
-        |   `-- styles
-        |-- routes
-        |-- server
-        |   |-- handlers
-        |   |-- models
-        |   `-- views
-        |-- store
-        |-- styles
-        |-- client.js
-        `-- server.js
+|-- src
+|   `-- app
+|       |-- components
+|       |-- details
+|       |   |-- actions
+|       |   |-- buy-now
+|       |   |   |-- components
+|       |   |   `-- styles
+|       |   |-- components
+|       |   |-- reducers
+|       |   `-- styles
+|       |-- list
+|       |   |-- actions
+|       |   |-- components
+|       |   |-- reducers
+|       |   `-- styles
+|       |-- routes
+|       |-- server
+|       |   |-- handlers
+|       |   |-- models
+|       |   `-- views
+|       |-- store
+|       |-- styles
+|       |-- client.js
+|       `-- server.js
+`-- dist
+    `-- media
 ```
