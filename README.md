@@ -17,11 +17,11 @@ or
 1. npm test
 
 ###Additional tasks
-npm run clean > will clean bundled files from dist folder
-npm run gzip-js > zips the bundle.js file from dist to pre-zip the content
-npm run gzip-css > zips the main.css file from dist to pre-zip the content
-npm run build-webpack-prod > runs minified version of the bundles
-npm run watch-sass > runs a watch task over scss files 
+- npm run clean > will clean bundled files from dist folder
+- npm run gzip-js > zips the bundle.js file from dist to pre-zip the content
+- npm run gzip-css > zips the main.css file from dist to pre-zip the content
+- npm run build-webpack-prod > runs minified version of the bundles
+- npm run watch-sass > runs a watch task over scss files 
 
 #Project structure
 ```
