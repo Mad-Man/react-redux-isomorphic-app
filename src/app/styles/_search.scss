@@ -3,37 +3,42 @@ header {
         background-color: $ml-yellow;
         .search {
             margin: 15px 0 10px 0;
-            figure {
-                padding: 0;
-                margin-bottom: 0;
+            @media(max-width: 800px) {
+                img {
+                    margin-top: 6px;
+                    width: 100%;
+                }
             }
-            form {
-                height: 37px;
+        }
+        figure {
+            margin-bottom: 0;
+        }
+        form {
+            height: 37px;
+            padding: 0;
+        }
+        .search-box {
+            height: 37px;
+            border: 0;
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
                 padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                border: 0;
             }
-            .search-box {
+            input {
+                &#searchInput {
+                    border: 0;
+                    border-radius: 4px 0 0 4px;
+                }
+            }
+            .search-button {
                 height: 37px;
                 border: 0;
-                .sr-only {
-                    position: absolute;
-                    width: 1px;
-                    height: 1px;
-                    padding: 0;
-                    margin: -1px;
-                    overflow: hidden;
-                    clip: rect(0, 0, 0, 0);
-                    border: 0;
-                }
-                input {
-                    &#searchInput {
-                        border: 0;
-                        border-radius: 4px 0 0 4px;
-                    }
-                }
-                .search-button {
-                    height: 37px;
-                    border: 0;
-                }
             }
         }
     }

@@ -21,7 +21,7 @@ export class Breadcrumbs extends React.Component {
             }) :
             null;
         return (
-            <nav className="container">
+            <nav className="container" role="navigation">
                 <div className="row justify-content-center breadcrumbs">
                     <div className="col-10">
                         {categories && <span> {breadcrumbs}</span>}

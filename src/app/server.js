@@ -1,6 +1,4 @@
-import {
-    Server
-} from 'http'
+import { Server } from 'http'
 import Express from 'express'
 import path from 'path'
 import compression from 'compression'
@@ -28,9 +26,8 @@ app.set('view engine', Constants.VIEW_ENGINE_TYPE)
     .get("/api/items/:id", apiItemDetailHandler)
     .get('*', htmlHandler);
 
-if (require.main === module) {
-    var server = new Server(app);
-    server.listen(process.env.PORT || Constants.DEFAULT_PORT, () => {
-        console.log(cliColor.cyan(Constants.SERVER_LISTENING_MESSAGE), server.address());
-    });
-}
+// create server instance
+const server = new Server(app);
+server.listen(process.env.PORT || Constants.DEFAULT_PORT, () => {
+    console.log(cliColor.cyan(Constants.SERVER_LISTENING_MESSAGE), server.address());
+});

@@ -12,6 +12,10 @@ export const detailsReducer = (state = { details: {}, loading: true, error: null
             return { ...state, loading: false, details: {}, error: action.error }
             break;
         }
+        case ('REFRESH_DETAILS_STORE'): {
+            return { ...state, loading: false, details: {} }
+            break;
+        }
         case ('REQUEST_DETAILS_SUCCESS'): {
             return { ...state, details: action.payload }
             break;

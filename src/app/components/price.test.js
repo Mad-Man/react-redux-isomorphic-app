@@ -11,16 +11,13 @@ describe('Test for #Price', () => {
             decimals: 99
         }
     }
-    let fontSize = {
-        max: '30px',
-        min: '20px'
-    }
+  
     it('It should exists', () => {
-        const wrapper = render(<Price item={item} fontSize={fontSize} />);
+        const wrapper = render(<Price item={item} />);
         expect(wrapper).to.be.exits;
     });
     it('It should output the correct value', () => {
-        const wrapper = mount(<Price item={item} fontSize={fontSize} />);
+        const wrapper = mount(<Price item={item} />);
         let price = wrapper.find('span').find('span').first().text();
         expect(price).to.be.equals('$ 1,00099')
     });
@@ -32,7 +29,7 @@ describe('Test for #Price', () => {
                 decimals: 99
             }
         }
-        const wrapper = mount(<Price item={item} fontSize={fontSize} />);
+        const wrapper = mount(<Price item={item} />);
         let price = wrapper.find('span').find('span').first().text();
         expect(price).to.be.equals('USD 1,00099')
     });
@@ -44,7 +41,7 @@ describe('Test for #Price', () => {
                 decimals: 44111111
             }
         }
-        const wrapper = mount(<Price item={item} fontSize={fontSize} />);
+        const wrapper = mount(<Price item={item} />);
         let price = wrapper.find('span').find('span').first().text();
         expect(price).to.be.equals('USD 1,00044')
     });

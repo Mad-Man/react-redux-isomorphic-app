@@ -2,7 +2,7 @@
 .details-container {
     div:first-of-type {
         //small devices
-        @media (max-width: 800px) {
+        @media (max-width: 1440px) {
             figure {
                 padding: $ml-padding 10px 0 10px;
                 img.item-detail-picture {
@@ -14,9 +14,9 @@
             }
         }
         //large devices
-        @media (min-width: 900px) {
+        @media (min-width: 1441px) {
             figure {
-                padding: $ml-padding 0 0 0;
+                padding: $ml-padding 15px 0 15px;
                 img.item-detail-picture {
                     width: 680px;
                 }
@@ -31,13 +31,14 @@
             background: $ml-white;
         }
         .description-container {
-            padding: 0 0 0 $ml-padding;
+            padding: 0 $ml-padding;
             h1 {
                 font-size: $ml-font-size-md;
             }
         }
         .description-section {
             font-size: $ml-font-size-s;
+            overflow: hidden;
             padding: $ml-padding 0;
         }
     }

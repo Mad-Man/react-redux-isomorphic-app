@@ -10,21 +10,17 @@ import { Price } from '../../components/price'
 export class ItemCard extends React.Component {
     render() {
         const {item, lastItem, dispatch} = this.props;
-        const fontSize = {
-            max: '24px',
-            min: '24px'
-        }
 
         return (
             <div className="col-12 item-card">
-                <Link to={`/items/${item.id}`} onClick={(e) => { dispatch(fetchDetails(item.id)) } }>
+                <Link to={`/items/${item.id}`}>
                     <div className="row">
                         <figure>
                             <img src={item.picture} alt={item.title} />
                         </figure>
                         <div className="col-12 col-md-9 item-info">
                             <span className="price-info">
-                                <Price fontSize={fontSize} item={item} />
+                                <Price item={item} />
                                 {item.free_shipping &&
                                     <i className="sprite inline sprite-ic_shipping"></i>
                                 }
