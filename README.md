@@ -21,6 +21,7 @@ npm run build-webpack-prod > runs minified version of the bundles
 npm run watch-sass > runs a watch task over scss files 
 
 #Project structure
+```
 src
     `-- app
         |-- components
@@ -46,3 +47,4 @@ src
         |-- styles
         |-- client.js
         `-- server.js
+```
