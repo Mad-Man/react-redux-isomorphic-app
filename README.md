@@ -25,31 +25,33 @@ or
 
 #Project structure
 ```
-src
-    `-- app
-        |-- components
-        |-- details
-        |   |-- actions
-        |   |-- buy-now
-        |   |   |-- components
-        |   |   `-- styles
-        |   |-- components
-        |   |-- reducers
-        |   `-- styles
-        |-- list
-        |   |-- actions
-        |   |-- components
-        |   |-- reducers
-        |   `-- styles
-        |-- routes
-        |-- server
-        |   |-- handlers
-        |   |-- models
-        |   `-- views
-        |-- store
-        |-- styles
-        |-- client.js
-        `-- server.js
+|-- src
+|   `-- app
+|       |-- components
+|       |-- details
+|       |   |-- actions
+|       |   |-- buy-now
+|       |   |   |-- components
+|       |   |   `-- styles
+|       |   |-- components
+|       |   |-- reducers
+|       |   `-- styles
+|       |-- list
+|       |   |-- actions
+|       |   |-- components
+|       |   |-- reducers
+|       |   `-- styles
+|       |-- routes
+|       |-- server
+|       |   |-- handlers
+|       |   |-- models
+|       |   `-- views
+|       |-- store
+|       |-- styles
+|       |-- client.js
+|       `-- server.js
+`-- dist
+    `-- media
 ```
 #comments
 - las imagenes del listado son de una resolucion mas baja (80 x 80) que el 180 x 180 de los redlines.
